@@ -4,13 +4,13 @@ Process hollowing is commonly performed by creating a process in a suspended sta
 
 How it’s done ?
 
-The malicious process starts the target process in a “suspended state” Use -> CreateProcess
+The malicious process starts the target process in a “suspended state” -> CreateProcess
 
-Replace or Unmap the victim process’s memory with the malicious executable.ZwUnmapViewOfSection or NtUnmapViewOfSection.
+Replace or Unmap the victim process’s memory with the malicious executable. -> ZwUnmapViewOfSection or NtUnmapViewOfSection.
 
-injected malicious code VirtualAllocEx, WriteProcessMemory.
+injected malicious code ->  VirtualAllocEx, WriteProcessMemory.
 
-Set the entry point of the main thread in the target process to the starting address of malicious code, then resume the thread. SetThreadContext, ResumeThread.
+Set the entry point of the main thread in the target process to the starting address of malicious code, then resume the thread. -> SetThreadContext, ResumeThread.
 
 Demo: 
 
